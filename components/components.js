@@ -83,6 +83,13 @@ export class Gravity {
     }
 }
 
+export class Bounce {
+    constructor() {
+        this.name = "bounce"
+        this.value = 50
+    }
+}
+
 export class Collision {
     constructor() {
         this.name = "collision"
