@@ -1,4 +1,4 @@
-import { Dimension, Movement, Position, Render, Inventory, Gun, Collision } from "./components/components.js"
+import { Dimension, Movement, Position, Render, Inventory, Gun, Collision, Gravity } from "./components/components.js"
 
 export default class Entity {
     constructor(name) {
@@ -27,6 +27,8 @@ export default class Entity {
         entity.addComponent(new Inventory())
 
         entity.addComponent(new Collision())
+
+        entity.addComponent(new Gravity())
 
         entity.components.inventory.addItem(new Gun())
 

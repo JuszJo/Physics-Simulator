@@ -76,6 +76,13 @@ export class Movement {
     }
 }
 
+export class Gravity {
+    constructor() {
+        this.name = "gravity"
+        this.value = 5
+    }
+}
+
 export class Collision {
     constructor() {
         this.name = "collision"
