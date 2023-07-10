@@ -1,4 +1,5 @@
 import CollisionSystem from "./CollisionSystem.js"
+import GravitySystem from "./GravitySystem.js"
 import InputSystem from "./InputSystem.js"
 import MovementSystem from "./MovementSystem.js"
 import RenderSystem from "./RenderSystem.js"
@@ -17,11 +18,15 @@ export default class GameSystem {
 
         this.systems.collisionSystem = new CollisionSystem(this.entities)
 
+        this.systems.gravitySystem = new GravitySystem(this.entities)
+
         this.systems.inputSystem.listen()
     }
 
     update() {
         // all systems go here
+        this.systems.gravitySystem.applyGravity()
+
         this.systems.movementSystem.movePlayer()
 
         this.systems.collisionSystem.checkWallCollision()

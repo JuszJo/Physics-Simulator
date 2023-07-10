@@ -67,4 +67,20 @@ export default class MovementSystem {
     static setPositionY(currentEntity, newPosition) {
         currentEntity.components.position.y = newPosition
     }
+
+    static subPositionX(currentEntity, amount) {
+        currentEntity.components.position.x -= amount
+    }
+    
+    static subPositionY(currentEntity, amount) {
+        currentEntity.components.position.y -= amount
+    }
+
+    static addPositionX(currentEntity, amount) {
+        currentEntity.components.position.x += amount
+    }
+    
+    static addPositionY(currentEntity, amount) {
+        currentEntity.components.position.y += amount
+    }
 }

@@ -79,7 +79,7 @@ export class Movement {
 export class Gravity {
     constructor() {
         this.name = "gravity"
-        this.value = 5
+        this.value = 10
     }
 }
 
