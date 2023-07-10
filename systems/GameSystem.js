@@ -23,6 +23,22 @@ export default class GameSystem {
         this.systems.inputSystem.listen()
     }
 
+    addToAll(component) {
+        for(const id in this.entities) {
+            const currentEntity = this.entities[id]
+
+            currentEntity.addComponent(new component())
+        }
+    }
+    
+    removeFromAll(componentName) {
+        for(const id in this.entities) {
+            const currentEntity = this.entities[id]
+    
+            currentEntity.removeComponent(componentName)
+        }
+    }
+
     update() {
         // all systems go here
         this.systems.gravitySystem.applyGravity()

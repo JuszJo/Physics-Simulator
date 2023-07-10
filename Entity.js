@@ -16,8 +16,8 @@ export default class Entity {
         }))
 
         entity.addComponent(new Dimension({
-            width: 100,
-            height: 100,
+            width: 20,
+            height: 20,
         }))
 
         entity.addComponent(new Movement("controlled"))
@@ -28,7 +28,7 @@ export default class Entity {
 
         entity.addComponent(new Collision())
 
-        entity.addComponent(new Gravity())
+        // entity.addComponent(new Gravity())
 
         entity.components.inventory.addItem(new Gun())
 
