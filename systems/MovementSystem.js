@@ -20,6 +20,9 @@ export default class MovementSystem {
                 if(key == "d") {
                     currentEntity.components.movement.controls.right = true
                 }
+                if(key == " ") {
+                    currentEntity.components.movement.controls.space = true
+                }
             }
         }        
     }
@@ -40,6 +43,9 @@ export default class MovementSystem {
                 }
                 if(key == "d") {
                     currentEntity.components.movement.controls.right = false
+                }
+                if(key == " ") {
+                    currentEntity.components.movement.controls.space = false
                 }
             }
         }        
@@ -63,6 +69,9 @@ export default class MovementSystem {
                 }
                 if(currentEntity.components.movement.controls.right) {
                     currentEntity.components.position.x += 5
+                }
+                if(currentEntity.components.movement.controls.space) {
+
                 }
             }
         }

@@ -74,6 +74,7 @@ export class Movement {
             down: false,
             left: false,
             right: false,
+            space: false
         }
         
         this.controlsArrow = {
