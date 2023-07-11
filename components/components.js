@@ -94,7 +94,7 @@ export class Gravity {
 export class Bounce {
     constructor() {
         this.name = "bounce"
-        this.value = 50
+        this.value = 20
     }
 }
 

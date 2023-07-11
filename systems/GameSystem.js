@@ -1,8 +1,10 @@
+import BounceSystem from "./BounceSystem.js"
 import CollisionSystem from "./CollisionSystem.js"
 import GravitySystem from "./GravitySystem.js"
 import InputSystem from "./InputSystem.js"
 import MovementSystem from "./MovementSystem.js"
 import RenderSystem from "./RenderSystem.js"
+import VelocitySystem from "./VelocitySystem.js"
 
 export default class GameSystem {
     constructor() {
@@ -17,6 +19,10 @@ export default class GameSystem {
         this.systems.inputSystem = new InputSystem(this.systems.movementSystem)
 
         this.systems.collisionSystem = new CollisionSystem(this.entities)
+
+        this.systems.velocitySystem = new VelocitySystem(this.entities)
+
+        this.systems.bounceSystem = new BounceSystem(this.entities)
 
         this.systems.gravitySystem = new GravitySystem(this.entities)
 
@@ -45,8 +51,10 @@ export default class GameSystem {
 
         this.systems.movementSystem.movePlayer()
 
-        this.systems.movementSystem.bounce()
-
+        this.systems.bounceSystem.applyBounce()
+        
+        this.systems.velocitySystem.applyVelocity()
+        
         this.systems.collisionSystem.checkWallCollision()
 
         this.systems.renderSystem.render()
