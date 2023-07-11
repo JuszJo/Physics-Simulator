@@ -1,4 +1,4 @@
-import { Bounce, GameWorld } from "../components/components.js"
+import { GameWorld } from "../components/components.js"
 import MovementSystem from "./MovementSystem.js"
 import VelocitySystem from "./VelocitySystem.js"
 
