@@ -1,4 +1,5 @@
 import VelocitySystem from "./VelocitySystem.js"
+import MovementSystem from "./MovementSystem.js"
 
 export default class BounceSystem {
     constructor(entities) {
@@ -15,11 +16,11 @@ export default class BounceSystem {
                     VelocitySystem.setVelocityY(currentEntity, 0)
                 }
                 else {
-                    VelocitySystem.divVelocityY(currentEntity, 1.1)
+                    VelocitySystem.multVelocityY(currentEntity, currentEntity.components.bounce.value)
                     
                     VelocitySystem.multVelocityY(currentEntity, -1)
     
-                    currentEntity.components.position.state = "air"
+                    MovementSystem.changeState(currentEntity, "air")
                 }
             }
         }

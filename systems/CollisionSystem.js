@@ -37,7 +37,7 @@ export default class CollisionSystem {
                     if(entity.y + entity.height > game.canvasHeight) {
                         MovementSystem.setPositionY(currentEntity, game.canvasHeight - entity.height)
 
-                        currentEntity.components.position.state = "ground"
+                        MovementSystem.changeState(currentEntity, "ground")
                     }
                 }
             }

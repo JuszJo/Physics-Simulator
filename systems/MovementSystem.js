@@ -52,7 +52,7 @@ export default class MovementSystem {
             if(currentEntity.components.movement) {
                 if(currentEntity.components.movement.controls.up) {
                     currentEntity.components.position.y -= 5
-                    
+
                     currentEntity.components.position.state = "air"
                 }
                 if(currentEntity.components.movement.controls.down) {
@@ -90,5 +90,9 @@ export default class MovementSystem {
     
     static addPositionY(currentEntity, amount) {
         currentEntity.components.position.y += amount
+    }
+
+    static changeState(currentEntity, state) {
+        currentEntity.components.position.state = state
     }
 }
