@@ -1,4 +1,5 @@
 import MovementSystem from "./MovementSystem.js"
+import VelocitySystem from "./VelocitySystem.js"
 
 export default class GravitySystem {
     constructor(entities) {
@@ -12,7 +13,7 @@ export default class GravitySystem {
             if(currentEntity.components.gravity) {
                 const gravityValue = currentEntity.components.gravity.value
 
-                currentEntity.components.velocity.y += gravityValue
+                VelocitySystem.addVelocityY(currentEntity, gravityValue)
 
                 MovementSystem.addPositionY(currentEntity, currentEntity.components.velocity.y)
             }
