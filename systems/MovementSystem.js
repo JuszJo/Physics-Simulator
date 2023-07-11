@@ -1,3 +1,5 @@
+import JumpSystem from "./JumpSystem.js"
+
 export default class MovementSystem {
     constructor(entities) {
         this.entities = entities
@@ -70,8 +72,10 @@ export default class MovementSystem {
                 if(currentEntity.components.movement.controls.right) {
                     currentEntity.components.position.x += 5
                 }
-                if(currentEntity.components.movement.controls.space) {
+                if(currentEntity.components.movement.controls.space && currentEntity.components.position.state == "ground") { 
+                    JumpSystem.applyJump(currentEntity, currentEntity.components.jump.value)
 
+                    MovementSystem.changeState(currentEntity, "jump")
                 }
             }
         }
