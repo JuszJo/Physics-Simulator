@@ -7,7 +7,7 @@ export default class Entity {
         this.components = {}
     }
 
-    static createDefault() {
+    static createDefault(game) {
         const entity = new Entity()
 
         entity.addComponent(new Position({
@@ -34,6 +34,8 @@ export default class Entity {
         entity.addComponent(new Gravity())
 
         entity.components.inventory.addItem(new Gun())
+
+        game.entities[entity.id] = entity
 
         return entity
     }

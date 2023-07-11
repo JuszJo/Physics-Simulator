@@ -10,15 +10,13 @@ const game = new GameSystem()
 new UI(game)
 
 // use default entity
-const entity = Entity.createDefault()
+const entity = Entity.createDefault(game)
 
 entity.addComponent(new Movement("controlled"))
 
 entity.addComponent(new Bounce())
 
 // entity.printInfo()
-
-game.entities[entity.id] = entity
 
 entity.generateRandomEntities(game)
 
