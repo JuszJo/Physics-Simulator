@@ -12,7 +12,9 @@ export default class GravitySystem {
             if(currentEntity.components.gravity) {
                 const gravityValue = currentEntity.components.gravity.value
 
-                MovementSystem.addPositionY(currentEntity, gravityValue)
+                currentEntity.components.velocity.y += gravityValue
+
+                MovementSystem.addPositionY(currentEntity, currentEntity.components.velocity.y)
             }
         }
     }

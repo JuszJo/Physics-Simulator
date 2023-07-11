@@ -48,6 +48,14 @@ export class Position {
     }
 }
 
+export class Velocity {
+    constructor(velocity) {
+        this.name = "velocity"
+        this.x = velocity.x
+        this.y = velocity.y
+    }
+}
+
 export class Dimension {
     constructor(dimension) {
         this.name = "dimension"
@@ -79,7 +87,7 @@ export class Movement {
 export class Gravity {
     constructor() {
         this.name = "gravity"
-        this.value = 10
+        this.value = 1
     }
 }
 

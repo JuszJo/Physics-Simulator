@@ -60,6 +60,26 @@ export default class MovementSystem {
         }
     }
 
+    bounce() {
+        for(const id in this.entities) {
+            const currentEntity = this.entities[id]
+
+            if(currentEntity.components.bounce) {
+                console.log(currentEntity.components.bounce.value);
+
+                currentEntity.components.position.y -= currentEntity.components.bounce.value
+
+                currentEntity.components.bounce.value -= 2
+                // currentEntity.components.bounce.value -= currentEntity.components.gravity.value
+
+                if(currentEntity.components.bounce.value <= 0) {
+                    console.log("yh");
+                    currentEntity.removeComponent("bounce")
+                }
+            }
+        }
+    }
+
     static setPositionX(currentEntity, newPosition) {
         currentEntity.components.position.x = newPosition
     }
@@ -83,4 +103,8 @@ export default class MovementSystem {
     static addPositionY(currentEntity, amount) {
         currentEntity.components.position.y += amount
     }
+
+    // static addBounceComponent(currentEntity) {
+    //     currentEntity.addComponent()
+    // }
 }

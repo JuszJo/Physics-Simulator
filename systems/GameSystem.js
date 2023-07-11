@@ -45,6 +45,8 @@ export default class GameSystem {
 
         this.systems.movementSystem.movePlayer()
 
+        this.systems.movementSystem.bounce()
+
         this.systems.collisionSystem.checkWallCollision()
 
         this.systems.renderSystem.render()

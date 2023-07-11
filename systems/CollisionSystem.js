@@ -1,4 +1,4 @@
-import { GameWorld } from "../components/components.js"
+import { Bounce, GameWorld } from "../components/components.js"
 import MovementSystem from "./MovementSystem.js"
 
 export default class CollisionSystem {
@@ -33,6 +33,10 @@ export default class CollisionSystem {
                     }
                     if(entity.y + entity.height > game.canvasHeight) {
                         MovementSystem.setPositionY(currentEntity, game.canvasHeight - entity.height)
+
+                        currentEntity.components.velocity.y = 0
+
+                        // currentEntity.addComponent(new Bounce())
                     }
                 }
             }

@@ -1,4 +1,4 @@
-import { Dimension, Movement, Position, Render, Inventory, Gun, Collision, Gravity } from "./components/components.js"
+import { Dimension, Movement, Position, Render, Inventory, Gun, Collision, Gravity, Bounce, Velocity } from "./components/components.js"
 
 export default class Entity {
     constructor(name) {
@@ -13,6 +13,11 @@ export default class Entity {
         entity.addComponent(new Position({
             x: 50,
             y: 50,
+        }))
+        
+        entity.addComponent(new Velocity({
+            x: 0,
+            y: 0
         }))
 
         entity.addComponent(new Dimension({
@@ -29,6 +34,7 @@ export default class Entity {
         entity.addComponent(new Collision())
 
         // entity.addComponent(new Gravity())
+        // entity.addComponent(new Bounce())
 
         entity.components.inventory.addItem(new Gun())
 
