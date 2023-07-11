@@ -52,6 +52,8 @@ export default class MovementSystem {
             if(currentEntity.components.movement) {
                 if(currentEntity.components.movement.controls.up) {
                     currentEntity.components.position.y -= 5
+                    
+                    currentEntity.components.position.state = "air"
                 }
                 if(currentEntity.components.movement.controls.down) {
                     currentEntity.components.position.y += 5

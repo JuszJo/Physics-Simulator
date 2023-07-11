@@ -10,9 +10,17 @@ export default class BounceSystem {
             const currentEntity = this.entities[id]
 
             if(currentEntity.components.bounce && currentEntity.components.position.state == "ground") {
-                VelocitySystem.subVelocityY(currentEntity, currentEntity.components.bounce.value)
-
-                currentEntity.components.position.state = "air"
+                if(currentEntity.components.velocity.y < 1) {
+                    // if finished bounce
+                    VelocitySystem.setVelocityY(currentEntity, 0)
+                }
+                else {
+                    VelocitySystem.divVelocityY(currentEntity, 1.1)
+                    
+                    VelocitySystem.multVelocityY(currentEntity, -1)
+    
+                    currentEntity.components.position.state = "air"
+                }
             }
         }
     }

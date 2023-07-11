@@ -38,4 +38,20 @@ export default class VelocitySystem {
     static addVelocityY(currentEntity, amount) {
         currentEntity.components.velocity.y += amount
     }
+
+    static multVelocityX(currentEntity, amount) {
+        currentEntity.components.velocity.x *= amount
+    }
+
+    static multVelocityY(currentEntity, amount) {
+        currentEntity.components.velocity.y *= amount
+    }
+
+    static divVelocityX(currentEntity, amount) {
+        currentEntity.components.velocity.x /= amount
+    }
+
+    static divVelocityY(currentEntity, amount) {
+        currentEntity.components.velocity.y /= amount
+    }
 }

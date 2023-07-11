@@ -63,7 +63,7 @@ function generateRandomEntities() {
     return arrayOfEntities
 }
 
-entity.printInfo()
+// entity.printInfo()
 
 game.entities[entity.id] = entity
 

@@ -48,14 +48,14 @@ export default class GameSystem {
     update() {
         // all systems go here
         this.systems.gravitySystem.applyGravity()
-
+        
         this.systems.movementSystem.movePlayer()
-
-        this.systems.bounceSystem.applyBounce()
         
         this.systems.velocitySystem.applyVelocity()
         
         this.systems.collisionSystem.checkWallCollision()
+        
+        this.systems.bounceSystem.applyBounce()
 
         this.systems.renderSystem.render()
 
