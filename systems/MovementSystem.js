@@ -49,17 +49,19 @@ export default class MovementSystem {
         for(const id in this.entities) {
             const currentEntity = this.entities[id]
 
-            if(currentEntity.components.movement.controls.up) {
-                currentEntity.components.position.y -= 5
-            }
-            if(currentEntity.components.movement.controls.down) {
-                currentEntity.components.position.y += 5
-            }
-            if(currentEntity.components.movement.controls.left) {
-                currentEntity.components.position.x -= 5
-            }
-            if(currentEntity.components.movement.controls.right) {
-                currentEntity.components.position.x += 5
+            if(currentEntity.components.movement) {
+                if(currentEntity.components.movement.controls.up) {
+                    currentEntity.components.position.y -= 5
+                }
+                if(currentEntity.components.movement.controls.down) {
+                    currentEntity.components.position.y += 5
+                }
+                if(currentEntity.components.movement.controls.left) {
+                    currentEntity.components.position.x -= 5
+                }
+                if(currentEntity.components.movement.controls.right) {
+                    currentEntity.components.position.x += 5
+                }
             }
         }
     }

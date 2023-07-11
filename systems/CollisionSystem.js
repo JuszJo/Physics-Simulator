@@ -31,12 +31,14 @@ export default class CollisionSystem {
                     }
                     if(entity.y < 0) {
                         MovementSystem.setPositionY(currentEntity, 0)
+
+                        VelocitySystem.setVelocityY(currentEntity, 0)
                     }
                     if(entity.y + entity.height > game.canvasHeight) {
                         MovementSystem.setPositionY(currentEntity, game.canvasHeight - entity.height)
 
-                        currentEntity.addComponent(new Bounce())
-                        
+                        currentEntity.components.position.state = "ground"
+
                         VelocitySystem.setVelocityY(currentEntity, 0)
                     }
                 }

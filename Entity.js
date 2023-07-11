@@ -25,16 +25,13 @@ export default class Entity {
             height: 20,
         }))
 
-        entity.addComponent(new Movement("controlled"))
-
         entity.addComponent(new Render("quad"))
 
         entity.addComponent(new Inventory())
 
         entity.addComponent(new Collision())
 
-        // entity.addComponent(new Gravity())
-        // entity.addComponent(new Bounce())
+        entity.addComponent(new Gravity())
 
         entity.components.inventory.addItem(new Gun())
 

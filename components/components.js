@@ -45,6 +45,7 @@ export class Position {
         this.name = "position"
         this.x = position.x
         this.y = position.y
+        this.state = "air"
     }
 }
 
