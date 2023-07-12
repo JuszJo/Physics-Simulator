@@ -38,6 +38,10 @@ export default class CollisionSystem {
                         MovementSystem.setPositionY(currentEntity, game.canvasHeight - entity.height)
 
                         MovementSystem.changeState(currentEntity, "ground")
+                        
+                        if(!currentEntity.components.bounce) {
+                            VelocitySystem.setVelocityY(currentEntity, 0)
+                        }                        
                     }
                 }
             }
