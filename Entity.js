@@ -7,6 +7,24 @@ export default class Entity {
         this.components = {}
     }
 
+    addComponent(component) {
+        this.components[component.name] = component
+    }
+
+    removeComponent(componentName) {
+        let name = componentName
+
+        if(typeof componentName == "function") {
+            name = componentName.name || componentName.prototype.name
+        }
+
+        delete this.components[name]
+    }
+
+    printInfo() {
+        console.log(JSON.stringify(this, null, 4));
+    }
+
     static createDefault(game) {
         const entity = new Entity()
 
@@ -40,21 +58,7 @@ export default class Entity {
         return entity
     }
 
-    addComponent(component) {
-        this.components[component.name] = component
-    }
-
-    removeComponent(componentName) {
-        let name = componentName
-
-        if(typeof componentName == "function") {
-            name = componentName.name || componentName.prototype.name
-        }
-
-        delete this.components[name]
-    }
-
-    generateRandomEntities(game) {
+    static generateRandomEntities(game) {
         const arrayOfEntities = []
     
         for(let i = 0; i < 10; ++i) {
@@ -101,7 +105,4 @@ export default class Entity {
         return arrayOfEntities
     }
 
-    printInfo() {
-        console.log(JSON.stringify(this, null, 4));
-    }
 }

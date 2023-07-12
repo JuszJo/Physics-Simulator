@@ -20,6 +20,6 @@ entity.addComponent(new components.Jump())
 
 // entity.printInfo()
 
-// entity.generateRandomEntities(game)
+// Entity.generateRandomEntities(game)
 
 game.startLoop()

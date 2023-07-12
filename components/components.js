@@ -128,6 +128,12 @@ export class Render {
     }
 }
 
+export class BackgroundImage {
+    constructor(image) {
+        this.image = image
+    }
+}
+
 export default {
     GameWorld,
     Inventory,
@@ -140,5 +146,6 @@ export default {
     Jump,
     Collision,
     Gun,
-    Render
+    Render,
+    BackgroundImage
 }
