@@ -1,7 +1,7 @@
 import GameSystem from "./systems/GameSystem.js";
 import Entity from "./Entity.js";
 import UI from "./api.js";
-import { Movement, Bounce, Jump } from "./components/components.js";
+import components from "./components/components.js";
 
 // init game system
 const game = new GameSystem()
@@ -12,11 +12,11 @@ new UI(game)
 // use default entity
 const entity = Entity.createDefault(game)
 
-entity.addComponent(new Movement("controlled"))
+entity.addComponent(new components.Movement("controlled"))
 
 // entity.addComponent(new Bounce())
 
-entity.addComponent(new Jump())
+entity.addComponent(new components.Jump())
 
 // entity.printInfo()
 

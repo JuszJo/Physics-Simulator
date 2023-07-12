@@ -127,3 +127,18 @@ export class Render {
         this.type = type
     }
 }
+
+export default {
+    GameWorld,
+    Inventory,
+    Position,
+    Velocity,
+    Dimension,
+    Movement,
+    Gravity,
+    Bounce,
+    Jump,
+    Collision,
+    Gun,
+    Render
+}

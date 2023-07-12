@@ -1,4 +1,4 @@
-import { Gravity } from "./components/components.js";
+import components from "./components/components.js";
 
 export default class UI {
     constructor(game) {
@@ -8,7 +8,7 @@ export default class UI {
         this.removeGravityButton = document.getElementById("remove-gravity")
 
         this.applyGravityButton.addEventListener('click', () => {
-            game.addToAll(Gravity)  
+            game.addToAll(components.Gravity)  
         })
         
         this.removeGravityButton.addEventListener('click', () => {
