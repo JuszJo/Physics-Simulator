@@ -1,4 +1,4 @@
-import { Dimension, Position, Render, Inventory, Gun, Collision, Gravity, Velocity } from "./components/components.js"
+import components from "./components/components.js"
 
 export default class Entity {
     constructor(name) {
@@ -28,30 +28,30 @@ export default class Entity {
     static createDefault(game) {
         const entity = new Entity()
 
-        entity.addComponent(new Position({
+        entity.addComponent(new components.Position({
             x: 50,
             y: 50,
         }))
         
-        entity.addComponent(new Velocity({
+        entity.addComponent(new components.Velocity({
             x: 0,
             y: 0
         }))
 
-        entity.addComponent(new Dimension({
+        entity.addComponent(new components.Dimension({
             width: 20,
             height: 20,
         }))
 
-        entity.addComponent(new Render("quad"))
+        entity.addComponent(new components.Render("quad"))
 
-        entity.addComponent(new Inventory())
+        entity.addComponent(new components.Inventory())
 
-        entity.addComponent(new Collision())
+        entity.addComponent(new components.Collision())
 
-        entity.addComponent(new Gravity())
+        entity.addComponent(new components.Gravity())
 
-        entity.components.inventory.addItem(new Gun())
+        entity.components.inventory.addItem(new components.Gun())
 
         game.entities[entity.id] = entity
 
@@ -74,28 +74,28 @@ export default class Entity {
                 height: Math.min(Math.max(Math.floor(Math.random() * 100), 20), 100),
             }
         
-            entity.addComponent(new Position({
+            entity.addComponent(new components.Position({
                 x: randomPosition.x,
                 y: randomPosition.y,
             }))
             
-            entity.addComponent(new Velocity({
+            entity.addComponent(new components.Velocity({
                 x: 0,
                 y: 0
             }))
         
-            entity.addComponent(new Dimension({
+            entity.addComponent(new components.Dimension({
                 width: randomDimension.width,
                 height: randomDimension.height,
             }))
         
-            entity.addComponent(new Render("quad"))
+            entity.addComponent(new components.Render("quad"))
         
-            entity.addComponent(new Inventory())
+            entity.addComponent(new components.Inventory())
         
-            entity.addComponent(new Collision())
+            entity.addComponent(new components.Collision())
         
-            entity.components.inventory.addItem(new Gun())
+            entity.components.inventory.addItem(new components.Gun())
     
             game.entities[entity.id] = entity
     
@@ -105,4 +105,22 @@ export default class Entity {
         return arrayOfEntities
     }
 
+    createBackgroundImageEntity(game) {
+        const entity = new Entity()
+        
+        entity.addComponent(new components.Position({
+            x: 50,
+            y: 50,
+        }))
+        
+        entity.addComponent(new components.Velocity({
+            x: 0,
+            y: 0
+        }))
+
+        entity.addComponent(new components.Dimension({
+            width: 20,
+            height: 20,
+        }))
+    }
 }
