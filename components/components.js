@@ -136,6 +136,12 @@ export class BackgroundImage {
     }
 }
 
+export class Camera {
+    constructor() {
+        this.name = "camera"
+    }
+}
+
 export default {
     GameWorld,
     Inventory,
@@ -149,5 +155,6 @@ export default {
     Collision,
     Gun,
     Render,
-    BackgroundImage
+    BackgroundImage,
+    Camera
 }
