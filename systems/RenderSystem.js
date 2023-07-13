@@ -24,6 +24,13 @@ export default class RenderSystem {
                             currentEntityObject.width, currentEntityObject.height
                         )
 
+                        break;                        
+                    case "camera":
+                        this.game.drawingSurface.strokeRect(
+                            currentEntityObject.x, currentEntityObject.y,
+                            currentEntityObject.width, currentEntityObject.height
+                        )
+
                         break;
                 
                     default:

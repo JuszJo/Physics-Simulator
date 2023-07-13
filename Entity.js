@@ -29,7 +29,7 @@ export default class Entity {
         const entity = new Entity()
 
         entity.addComponent(new components.Position({
-            x: 50,
+            x: 300,
             y: 50,
         }))
         

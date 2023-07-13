@@ -25,6 +25,18 @@ export default class MovementSystem {
                 if(key == " ") {
                     currentEntity.components.movement.controls.space = true
                 }
+                if(key == "ArrowUp") {
+                    currentEntity.components.movement.controls.up = true
+                }
+                if(key == "ArrowDown") {
+                    currentEntity.components.movement.controls.down = true
+                }
+                if(key == "ArrowLeft") {
+                    currentEntity.components.movement.controls.left = true
+                }
+                if(key == "ArrowRight") {
+                    currentEntity.components.movement.controls.right = true
+                }
             }
         }        
     }
@@ -49,6 +61,18 @@ export default class MovementSystem {
                 if(key == " ") {
                     currentEntity.components.movement.controls.space = false
                 }
+                if(key == "ArrowUp") {
+                    currentEntity.components.movement.controls.up = false
+                }
+                if(key == "ArrowDown") {
+                    currentEntity.components.movement.controls.down = false
+                }
+                if(key == "ArrowLeft") {
+                    currentEntity.components.movement.controls.left = false
+                }
+                if(key == "ArrowRight") {
+                    currentEntity.components.movement.controls.right = false
+                }
             }
         }        
     }
@@ -58,11 +82,11 @@ export default class MovementSystem {
             const currentEntity = this.entities[id]
 
             if(currentEntity.components.movement) {
-                if(currentEntity.components.movement.controls.up) {
-                    currentEntity.components.position.y -= 5
+                // if(currentEntity.components.movement.controls.up) {
+                //     currentEntity.components.position.y -= 5
 
-                    currentEntity.components.position.state = "air"
-                }
+                //     // currentEntity.components.position.state = "air"
+                // }
                 if(currentEntity.components.movement.controls.down) {
                     currentEntity.components.position.y += 5
                 }

@@ -82,6 +82,7 @@ export class Movement {
             down: false,
             left: false,
             right: false,
+            space: false
         }
     }
 }
@@ -137,10 +138,8 @@ export class BackgroundImage {
 }
 
 export class Camera {
-    constructor(width, height) {
+    constructor() {
         this.name = "camera"
-        this.width = width,
-        this.height = height
     }
 }
 
