@@ -130,7 +130,9 @@ export class Render {
 
 export class BackgroundImage {
     constructor(image) {
-        this.image = image
+        this.name = "backgroundImage"
+        this.image = new Image()
+        this.image.src = image
     }
 }
 

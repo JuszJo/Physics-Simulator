@@ -18,6 +18,8 @@ entity.addComponent(new components.Movement("controlled"))
 
 entity.addComponent(new components.Jump())
 
+Entity.createBackgroundImageEntity(game, "./assets/background.jpg")
+
 // entity.printInfo()
 
 // Entity.generateRandomEntities(game)

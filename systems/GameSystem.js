@@ -54,9 +54,11 @@ export default class GameSystem {
         this.systems.velocitySystem.applyVelocity()
         
         this.systems.collisionSystem.checkWallCollision()
-        
+
         this.systems.bounceSystem.applyBounce()
 
+        this.systems.renderSystem.renderBackgroundImage()
+        
         this.systems.renderSystem.render()
 
         requestAnimationFrame(this.update.bind(this))

@@ -1,24 +1,22 @@
-import { GameWorld } from "../components/components.js";
+import components from "../components/components.js"
 
 export default class RenderSystem {
     constructor(entities) {
         this.entities = entities
-        this.game = GameWorld.getProps()
+        this.game = components.GameWorld.getProps()
     }
 
     render() {
-        this.game.drawingSurface.clearRect(0, 0, this.game.canvasWidth, this.game.canvasHeight)
         for(const id in this.entities) {
             const currentEntity = this.entities[id]
 
-            const currentEntityObject = {
-                x: currentEntity.components.position.x,
-                y: currentEntity.components.position.y,
-                width: currentEntity.components.dimension.width,
-                height: currentEntity.components.dimension.height,
-            }
-
             if(currentEntity.components.render) {
+                const currentEntityObject = {
+                    x: currentEntity.components.position.x,
+                    y: currentEntity.components.position.y,
+                    width: currentEntity.components.dimension.width,
+                    height: currentEntity.components.dimension.height,
+                }
                 switch (currentEntity.components.render.type) {
                     case "quad":
                         this.game.drawingSurface.fillRect(
@@ -31,6 +29,26 @@ export default class RenderSystem {
                     default:
                         break;
                 }
+            }
+        }
+    }
+
+    renderBackgroundImage() {
+        this.game.drawingSurface.clearRect(0, 0, this.game.canvasWidth, this.game.canvasHeight)
+        for(const id in this.entities) {
+            const currentEntity = this.entities[id]
+
+            if(currentEntity.components.backgroundImage) {
+                const entityObject = {
+                    image: currentEntity.components.backgroundImage.image,
+                    x: currentEntity.components.position.x,
+                    y: currentEntity.components.position.y,
+                    width: currentEntity.components.backgroundImage.image.width,
+                    height: currentEntity.components.backgroundImage.image.height,
+                }
+
+                // draw image
+                this.game.drawingSurface.drawImage(entityObject.image, entityObject.x, entityObject.y)
             }
         }
     }

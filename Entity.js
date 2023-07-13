@@ -105,22 +105,21 @@ export default class Entity {
         return arrayOfEntities
     }
 
-    createBackgroundImageEntity(game) {
+    static createBackgroundImageEntity(game, image) {
         const entity = new Entity()
         
         entity.addComponent(new components.Position({
-            x: 50,
-            y: 50,
-        }))
-        
-        entity.addComponent(new components.Velocity({
             x: 0,
-            y: 0
+            y: 0,
         }))
 
-        entity.addComponent(new components.Dimension({
-            width: 20,
-            height: 20,
-        }))
+        // entity.addComponent(new components.Dimension({
+        //     width: 20,
+        //     height: 20,
+        // }))
+
+        entity.addComponent(new components.BackgroundImage(image))
+
+        game.entities[entity.id] = entity
     }
 }
