@@ -137,8 +137,10 @@ export class BackgroundImage {
 }
 
 export class Camera {
-    constructor() {
+    constructor(width, height) {
         this.name = "camera"
+        this.width = width,
+        this.height = height
     }
 }
 
